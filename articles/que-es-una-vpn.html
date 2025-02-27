@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué es una VPN? - TheHackingHat.org</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(-45deg, #00ff00, #00ffff, #00ff00, #00ffff);
+            background-size: 300% 300%;
+            animation: gradient 5s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            letter-spacing: -0.05em;
+        }
+        .custom-bg {
+            background-image: radial-gradient(circle at 50% 50%, rgba(0, 255, 0, 0.1) 0%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 0, 0, 0) 50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <div id="nav-placeholder"></div>
+
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <article class="max-w-4xl mx-auto">
+            <h1 class="text-5xl font-bold mb-8 gradient-text">¿Qué es una VPN?</h1>
+            
+            <div class="flex items-center justify-between mb-6 text-gray-400 text-sm">
+                <div class="flex items-center space-x-2">
+                    <span class="font-mono">Por TheHackingTeam</span>
+                    <span>•</span>
+                    <time datetime="2024-01-20">27 de Febrero, 2025</time>
+                </div>
+            </div>
+            
+            <div class="prose prose-lg prose-invert max-w-none">
+                <div class="bg-gray-800 rounded-lg p-6 mb-8 custom-bg">
+                    <p class="text-xl text-gray-300">Una VPN (Virtual Private Network) es una tecnología que crea una conexión segura y encriptada a través de Internet, permitiéndote navegar de forma privada y segura como si estuvieras conectado directamente a una red privada.</p>
+                </div>
+
+                <h2 class="text-3xl font-bold mb-4 text-green-400">Conceptos Básicos</h2>
+                <div class="space-y-4 mb-8">
+                    <p class="text-gray-300">Las VPNs son herramientas esenciales para la privacidad y seguridad en línea. Algunos conceptos clave incluyen:</p>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                        <li>Encriptación de datos para proteger tu información</li>
+                        <li>Enmascaramiento de tu dirección IP real</li>
+                        <li>Creación de un túnel seguro para tu tráfico de Internet</li>
+                        <li>Bypass de restricciones geográficas</li>
+                    </ul>
+                </div>
+
+                <h2 class="text-3xl font-bold mb-4 text-green-400">Tipos de VPN</h2>
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gray-800/50 p-6 rounded-lg border border-green-400/20">
+                        <h3 class="text-xl font-bold mb-3 text-green-400">VPN de Acceso Remoto</h3>
+                        <p class="text-gray-300">Permite a usuarios individuales conectarse de forma segura a una red privada desde cualquier ubicación</p>
+                    </div>
+                    <div class="bg-gray-800/50 p-6 rounded-lg border border-green-400/20">
+                        <h3 class="text-xl font-bold mb-3 text-green-400">VPN Site-to-Site</h3>
+                        <p class="text-gray-300">Conecta redes completas entre sí, comúnmente utilizado por empresas con múltiples ubicaciones</p>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold mb-4 text-green-400">Beneficios de Seguridad</h2>
+                <div class="space-y-4 mb-8">
+                    <p class="text-gray-300">El uso de VPNs proporciona múltiples ventajas de seguridad:</p>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                        <li>Protección contra el espionaje en redes públicas</li>
+                        <li>Prevención del rastreo en línea</li>
+                        <li>Acceso seguro a recursos corporativos</li>
+                        <li>Protección contra ataques de intermediarios (MITM)</li>
+                    </ul>
+                </div>
+
+                <h2 class="text-3xl font-bold mb-4 text-green-400">Usos Prácticos</h2>
+                <div class="space-y-4 mb-8">
+                    <p class="text-gray-300">Las VPNs tienen diversos usos en el mundo actual:</p>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                        <li>Trabajo remoto seguro</li>
+                        <li>Navegación privada en redes públicas</li>
+                        <li>Acceso a contenido geo-restringido</li>
+                        <li>Protección durante transacciones en línea</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg p-6 border-l-4 border-green-400 mb-8">
+                    <h3 class="text-xl font-bold mb-3 text-green-400">Consejo de Seguridad</h3>
+                    <p class="text-gray-300">Al elegir un servicio VPN, asegúrate de verificar su política de registros, velocidad de conexión y ubicación de servidores. Prioriza servicios que no almacenen registros de tu actividad y ofrezcan encriptación fuerte.</p>
+                </div>
+
+                <h2 class="text-3xl font-bold mb-4 text-green-400">Consideraciones Importantes</h2>
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gray-800/50 p-6 rounded-lg border border-green-400/20">
+                        <h3 class="text-xl font-bold mb-3 text-green-400">Al Elegir una VPN</h3>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                            <li>Política de no registros</li>
+                            <li>Velocidad y rendimiento</li>
+                            <li>Ubicación de servidores</li>
+                            <li>Protocolos de seguridad</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800/50 p-6 rounded-lg border border-green-400/20">
+                        <h3 class="text-xl font-bold mb-3 text-green-400">Mejores Prácticas</h3>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                            <li>Mantener el software actualizado</li>
+                            <li>Usar kill switch</li>
+                            <li>Verificar filtraciones de DNS</li>
+                            <li>Elegir protocolos seguros</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        fetch('/components/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                const script = document.createElement('script');
+                script.textContent = document.querySelector('#nav-placeholder script').textContent;
+                document.body.appendChild(script);
+            });
+    </script>
+</body>
+</html>

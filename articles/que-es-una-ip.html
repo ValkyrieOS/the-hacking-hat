@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué es una IP? - TheHackingHat.org</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(-45deg, #00ff00, #00ffff, #00ff00, #00ffff);
+            background-size: 300% 300%;
+            animation: gradient 5s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            letter-spacing: -0.05em;
+        }
+        .custom-bg {
+            background-image: radial-gradient(circle at 50% 50%, rgba(0, 255, 0, 0.1) 0%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 0, 0, 0) 50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <div id="nav-placeholder"></div>
+
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <article class="max-w-4xl mx-auto">
+            <h1 class="text-5xl font-bold mb-8 gradient-text">¿Qué es una IP?</h1>
+            
+            <div class="flex items-center justify-between mb-6 text-gray-400 text-sm">
+                <div class="flex items-center space-x-2">
+                    <span class="font-mono">Por TheHackingTeam</span>
+                    <span>•</span>
+                    <time datetime="2024-01-20">27 de Febrero, 2025</time>
+                </div>
+            </div>
+            
+            <div class="prose prose-lg prose-invert max-w-none">
+                <div class="bg-gray-800 rounded-lg p-6 mb-8 custom-bg">
+                    <p class="text-xl text-gray-300">Una dirección IP (Internet Protocol) es un identificador único que se asigna a cada dispositivo conectado a una red informática. Es como la dirección postal de tu dispositivo en Internet, permitiendo que la información viaje correctamente a través de la red global.</p>
+                </div>
+
+                <h2 class="text-3xl font-bold mb-4 text-green-400">Conceptos Básicos</h2>
+                <div class="space-y-4 mb-8">
+                    <p class="text-gray-300">Las direcciones IP son fundamentales para el funcionamiento de Internet y las redes en general. Algunos conceptos clave incluyen:</p>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                        <li>Cada dispositivo en una red necesita una dirección IP única para comunicarse</li>
+                        <li>Las IPs pueden ser estáticas (fijas) o dinámicas (cambiantes)</li>
+                        <li>Se utilizan tanto en redes locales (LAN) como en Internet (WAN)</li>
+                        <li>Son esenciales para el enrutamiento de datos entre dispositivos</li>
+                    </ul>
+                </div>
+
+                <h2 class="text-3xl font-bold mb-4 text-green-400">Tipos de direcciones IP</h2>
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gray-800/50 p-6 rounded-lg border border-green-400/20">
+                        <h3 class="text-xl font-bold mb-3 text-green-400">IPv4</h3>
+                        <p class="text-gray-300">El formato más común, utiliza números de 32 bits divididos en cuatro octetos (ejemplo: 192.168.1.1)</p>
+                    </div>
+                    <div class="bg-gray-800/50 p-6 rounded-lg border border-green-400/20">
+                        <h3 class="text-xl font-bold mb-3 text-green-400">IPv6</h3>
+                        <p class="text-gray-300">La nueva generación, usa 128 bits y notación hexadecimal (ejemplo: 2001:0db8:85a3:0000:0000:8a2e:0370:7334)</p>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold mb-4 text-green-400">Importancia en la Seguridad</h2>
+                <div class="space-y-4 mb-8">
+                    <p class="text-gray-300">Las direcciones IP son fundamentales en la seguridad informática por varias razones:</p>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                        <li>Permiten rastrear el origen de ataques cibernéticos</li>
+                        <li>Son esenciales para configurar firewalls y filtros de seguridad</li>
+                        <li>Ayudan a detectar actividades sospechosas en la red</li>
+                        <li>Son clave en la autenticación y el control de acceso</li>
+                    </ul>
+                </div>
+
+                <h2 class="text-3xl font-bold mb-4 text-green-400">Usos Prácticos</h2>
+                <div class="space-y-4 mb-8">
+                    <p class="text-gray-300">Las direcciones IP tienen múltiples aplicaciones en el mundo real:</p>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                        <li>Configuración de redes domésticas y empresariales</li>
+                        <li>Administración de servidores y servicios web</li>
+                        <li>Geolocalización y servicios basados en ubicación</li>
+                        <li>Diagnóstico y solución de problemas de red</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg p-6 border-l-4 border-green-400 mb-8">
+                    <h3 class="text-xl font-bold mb-3 text-green-400">Consejo de Seguridad</h3>
+                    <p class="text-gray-300">Siempre protege tu dirección IP utilizando VPNs o proxies cuando navegues en redes públicas o necesites mantener tu anonimato en línea. Además, considera usar firewalls y monitorear regularmente el tráfico de red para detectar actividades sospechosas.</p>
+                </div>
+
+                <h2 class="text-3xl font-bold mb-4 text-green-400">Herramientas Útiles</h2>
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gray-800/50 p-6 rounded-lg border border-green-400/20">
+                        <h3 class="text-xl font-bold mb-3 text-green-400">Para Análisis</h3>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                            <li>Wireshark - Análisis de tráfico de red</li>
+                            <li>Nmap - Escaneo de puertos y redes</li>
+                            <li>IPconfig/ifconfig - Configuración de red</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800/50 p-6 rounded-lg border border-green-400/20">
+                        <h3 class="text-xl font-bold mb-3 text-green-400">Para Protección</h3>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                            <li>VPNs - Protección de privacidad</li>
+                            <li>Firewalls - Control de tráfico</li>
+                            <li>DNS seguros - Navegación protegida</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        fetch('/components/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                const script = document.createElement('script');
+                script.textContent = document.querySelector('#nav-placeholder script').textContent;
+                document.body.appendChild(script);
+            });
+    </script>
+</body>
+</html>

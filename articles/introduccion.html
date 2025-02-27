@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a TheHackingHat.org - Nuestra Comunidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(-45deg, #00ff00, #00ffff, #00ff00, #00ffff);
+            background-size: 300% 300%;
+            animation: gradient 5s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            letter-spacing: -0.05em;
+        }
+        .custom-bg {
+            background-image: radial-gradient(circle at 50% 50%, rgba(0, 255, 0, 0.1) 0%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 0, 0, 0) 50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <!-- Include the shared navigation component -->
+    <div id="nav-placeholder"></div>
+    <script>
+        fetch('/components/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <div class="relative overflow-hidden">
+        <div class="absolute inset-0 custom-bg opacity-30"></div>
+        <article class="container mx-auto px-4 py-16 max-w-4xl relative z-10">
+        <h1 class="text-5xl md:text-6xl font-bold mb-8 gradient-text">Bienvenidos a TheHackingHat.org</h1>
+        
+        <div class="prose prose-invert max-w-none">
+            <p class="text-xl text-gray-300 mb-6">
+                Bienvenidos a TheHackingHat.org, tu nuevo hogar en el fascinante mundo del hacking ético, la ciberseguridad y la tecnología. Somos una comunidad dedicada a compartir conocimiento, experiencias y recursos para todos aquellos apasionados por la seguridad informática y el desarrollo tecnológico.
+            </p>
+
+            <h2 class="text-2xl font-bold mb-4 text-green-400 mt-8">Nuestra Misión</h2>
+            <p class="text-gray-300 mb-6">
+                En TheHackingHat.org, nos dedicamos a:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 mb-6 space-y-2">
+                <li>Proporcionar educación de calidad en ciberseguridad y hacking ético</li>
+                <li>Crear un espacio seguro para el aprendizaje y la experimentación</li>
+                <li>Fomentar las mejores prácticas en seguridad informática</li>
+                <li>Construir una comunidad activa de profesionales y entusiastas</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mb-4 text-green-400 mt-8">¿Qué Encontrarás Aquí?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-gray-800/50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3 text-green-400">Tutoriales y Guías</h3>
+                    <p class="text-gray-300">Recursos detallados para aprender desde conceptos básicos hasta técnicas avanzadas de seguridad.</p>
+                </div>
+                <div class="bg-gray-800/50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3 text-green-400">Artículos Técnicos</h3>
+                    <p class="text-gray-300">Análisis profundos sobre vulnerabilidades, herramientas y metodologías de seguridad.</p>
+                </div>
+            </div>
+
+            <h2 class="text-2xl font-bold mb-4 text-green-400 mt-8">Únete a Nuestra Comunidad</h2>
+            <p class="text-gray-300 mb-6">
+                Estamos construyendo una comunidad activa y comprometida de profesionales y entusiastas de la seguridad informática. Te invitamos a ser parte de este emocionante viaje, donde compartiremos conocimientos, experiencias y recursos para crecer juntos en el campo de la ciberseguridad.
+            </p>
+
+            <div class="bg-green-400/10 border border-green-400/20 rounded-lg p-6 mt-8">
+                <h3 class="text-xl font-bold mb-3 text-green-400">Próximamente</h3>
+                <p class="text-gray-300">
+                    Estamos trabajando en crear contenido valioso para nuestra comunidad. Pronto encontrarás:
+                </p>
+                <ul class="list-disc list-inside text-gray-300 mt-3 space-y-2">
+                    <li>Cursos completos de hacking ético</li>
+                    <li>Laboratorios prácticos de seguridad</li>
+                    <li>Foros de discusión</li>
+                    <li>Eventos y webinars</li>
+                </ul>
+            </div>
+        </div>
+    </article>
+</body>
+</html>
