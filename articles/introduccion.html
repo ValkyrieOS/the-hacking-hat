@@ -32,15 +32,6 @@
     </style>
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex flex-col">
-    <!-- Include the shared navigation component -->
-    <div id="nav-placeholder"></div>
-    <script>
-        fetch('/components/nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            });
-    </script>
 
     <div class="relative overflow-hidden">
         <div class="absolute inset-0 custom-bg opacity-30"></div>
