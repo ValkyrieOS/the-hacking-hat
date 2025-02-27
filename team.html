@@ -1,20 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheHackingTeam - Nuestro Equipo</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
         body {
             font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
         }
+
         .gradient-text {
             font-family: 'Space Mono', monospace;
             background: linear-gradient(-45deg, #00ff00, #00ffff, #00ff00, #00ffff);
@@ -26,27 +54,71 @@
             display: inline-block;
             letter-spacing: -0.05em;
         }
-        .custom-bg {
-            background-image: radial-gradient(circle at 50% 50%, rgba(0, 255, 0, 0.1) 0%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 0, 0, 0) 50%);
-        }
+
         .team-card {
-            transition: all 0.3s ease;
+            background: rgba(16, 16, 16, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
             border: 1px solid rgba(0, 255, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 16px;
+            padding: 2px;
+            background: linear-gradient(45deg, #00ff0080, #00ffff80);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
         .team-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 255, 0, 0.3);
-            box-shadow: 0 10px 30px -10px rgba(0, 255, 0, 0.2);
+            transform: translateY(-8px);
         }
+
+        .team-card:hover::before {
+            opacity: 1;
+        }
+
         .social-link {
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        .social-link:hover {
-            color: #00ff00;
-            transform: translateY(-2px);
+
+        .social-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: currentColor;
+            transform: translateX(-101%);
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover::after {
+            transform: translateX(0);
+        }
+
+        .custom-bg {
+            background: radial-gradient(circle at 50% 0%, rgba(0, 255, 0, 0.15) 0%, rgba(0, 255, 255, 0.1) 25%, transparent 50%);
         }
     </style>
 </head>
+
 <body class="bg-gray-900 text-white min-h-screen flex flex-col">
     <div id="nav-placeholder"></div>
     <script>
@@ -64,50 +136,95 @@
             });
     </script>
 
-    <main class="flex-grow container mx-auto px-4 py-16">
-        <div class="relative mb-16">
-            <div class="absolute inset-0 bg-gradient-to-b from-gray-800/30 to-transparent blur-xl"></div>
-            <h1 class="text-6xl md:text-7xl font-bold mb-6 text-center tracking-tight leading-none relative">
-                <span class="gradient-text">Nuestro Equipo</span>
-            </h1>
-            <p class="text-xl text-gray-300 text-center max-w-2xl mx-auto relative">
-                Conoce a los expertos detrás de TheHackingHat.org, dedicados a compartir conocimiento y experiencia en ciberseguridad.
-            </p>
-        </div>
+    <div class="custom-bg min-h-screen">
+        <main class="container mx-auto px-4 py-24">
+            <div class="relative mb-20">
+                <div
+                    class="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-green-400/10 to-transparent blur-3xl -z-10">
+                </div>
+                <h1 class="text-7xl md:text-8xl font-bold mb-8 text-center tracking-tighter relative">
+                    <span class="gradient-text inline-block">Nuestro Equipo</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 text-center max-w-3xl mx-auto relative leading-relaxed">
+                    Descubre a los apasionados expertos que impulsan la innovación y el conocimiento en ciberseguridad
+                    en TheHackingHat.org
+                </p>
+            </div>
 
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Glazzier Card -->
-            <div class="team-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 flex flex-col items-center text-center">
-                <h3 class="text-2xl font-bold mb-2 gradient-text">Glazzier</h3>
-                <p class="text-gray-400 mb-4 font-mono">Fundador & Desarrollador Principal</p>
-                <p class="text-gray-300 mb-6">Experto en ciberseguridad y desarrollo web con más de 5 años de experiencia. Apasionado por compartir conocimiento y crear contenido educativo.</p>
-                <div class="flex flex-col space-y-2">
-                    <a href="https://github.com/ValkyrieOS" target="_blank" rel="noopener noreferrer" class="social-link text-gray-300 hover:text-green-400 transition-all duration-300 font-mono flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                        </svg>
-                        [GitHub]
-                    </a>
-                    <a href="https://www.youtube.com/@Glazzier" target="_blank" rel="noopener noreferrer" class="social-link text-gray-300 hover:text-green-400 transition-all duration-300 font-mono flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.418-4.814a2.507 2.507 0 0 1 1.768-1.768C5.746 5 11.998 5 11.998 5s6.255 0 7.814.418z" clip-rule="evenodd"/>
-                            <path fill="currentColor" d="M15.194 12 10 15V9l5.194 3z"/>
-                        </svg>
-                        [YouTube]
-                    </a>
+            <div class="max-w-6xl mx-auto space-y-12 px-4">
+                <!-- Featured Member Section -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-green-400/10 via-cyan-400/10 to-green-400/10 blur-3xl -z-10"></div>
+                    <div class="team-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-12 border-2 border-green-400/20 hover:border-green-400/40">
+                        <div class="flex flex-col lg:flex-row items-center gap-8">
+                            <div class="flex-1 text-center lg:text-left space-y-4">
+                                <div class="inline-block px-4 py-1 rounded-full bg-green-400/10 text-green-400 text-sm font-medium mb-2">Fundador</div>
+                                <h3 class="text-3xl font-bold gradient-text">Glazzier</h3>
+                                <p class="text-gray-400 font-mono">Desarrollador Principal</p>
+                                <p class="text-gray-400 font-mono text-sm">Desde Cataluña</p>
+                                <p class="text-gray-300 text-lg">Estudiante de informática y ciberseguridad con 2 años de experiencia. Lleva programando por más de 5 años y se ha dedicado estos últimos dos años a ayudar a la gente en servidores y comunidades.</p>
+                                <div class="flex flex-wrap justify-center lg:justify-start gap-4 mt-6">
+                                    <a href="https://github.com/ValkyrieOS" target="_blank" rel="noopener noreferrer"
+                                        class="social-link text-gray-300 hover:text-green-400 transition-all duration-300 font-mono flex items-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                                        </svg>
+                                        GitHub
+                                    </a>
+                                    <a href="https://www.youtube.com/@Glazzier" target="_blank" rel="noopener noreferrer"
+                                        class="social-link text-gray-300 hover:text-green-400 transition-all duration-300 font-mono flex items-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.418-4.814a2.507 2.507 0 0 1 1.768-1.768C5.746 5 11.998 5 11.998 5s6.255 0 7.814.418z" clip-rule="evenodd"/>
+                                            <path fill="currentColor" d="M15.194 12 10 15V9l5.194 3z"/>
+                                        </svg>
+                                        YouTube
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                    <!-- Its_edurneee Card -->
+                    <div class="team-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 flex flex-col items-center text-center space-y-4 group">
+                        <div class="w-20 h-20 mb-4 rounded-full bg-gradient-to-r from-green-400/20 to-cyan-400/20 flex items-center justify-center">
+                            <span class="text-3xl gradient-text">I</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 gradient-text group-hover:scale-110 transition-transform">Its_edurneee</h3>
+                        <p class="text-gray-400 mb-2 font-mono">Miembro del Equipo</p>
+                        <p class="text-gray-400 mb-4 font-mono text-sm">Desde Islas Canarias</p>
+                        <p class="text-gray-300 mb-6">Contribuyendo al crecimiento y desarrollo de la comunidad TheHackingHat.</p>
+                    </div>
+
+                    <!-- Sebas Card -->
+                    <div class="team-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 flex flex-col items-center text-center space-y-4 group">
+                        <div class="w-20 h-20 mb-4 rounded-full bg-gradient-to-r from-green-400/20 to-cyan-400/20 flex items-center justify-center">
+                            <span class="text-3xl gradient-text">S</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 gradient-text group-hover:scale-110 transition-transform">Sebas</h3>
+                        <p class="text-gray-400 mb-2 font-mono">Escritor</p>
+                        <p class="text-gray-400 mb-4 font-mono text-sm">Desde Cataluña</p>
+                        <p class="text-gray-300 mb-6">Contribuyendo con contenido de calidad para la comunidad TheHackingHat.</p>
+                    </div>
+
+                    <!-- MagmaCube Card -->
+                    <div class="team-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 flex flex-col items-center text-center space-y-4 group">
+                        <div class="w-20 h-20 mb-4 rounded-full bg-gradient-to-r from-green-400/20 to-cyan-400/20 flex items-center justify-center">
+                            <span class="text-3xl gradient-text">M</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 gradient-text group-hover:scale-110 transition-transform">MagmaCube</h3>
+                        <p class="text-gray-400 mb-2 font-mono">Miembro del Equipo</p>
+                        <p class="text-gray-400 mb-4 font-mono text-sm">Desde España</p>
+                        <p class="text-gray-300 mb-6">Contribuyendo al crecimiento y desarrollo de la comunidad TheHackingHat.</p>
+                    </div>
                 </div>
             </div>
+        </main>
+    </div>
 
-            <!-- Próximamente Card -->
-            <div class="team-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 flex flex-col items-center text-center">
-                <h3 class="text-2xl font-bold mb-2 gradient-text">Próximamente</h3>
-                <p class="text-gray-400 mb-4 font-mono">Nuevo Miembro</p>
-                <p class="text-gray-300 mb-6">Estamos buscando nuevos talentos para unirse a nuestro equipo. ¡Mantente atento a las novedades!</p>
-            </div>
-        </div>
-    </main>
-
-    <footer class="bg-gray-800/50 backdrop-blur-sm py-8 mt-12">
+    <footer class="bg-gray-800/50 backdrop-blur-sm py-8 mt-auto">
         <div class="container mx-auto px-4 text-center text-gray-400">
             <p>&copy; 2025 TheHackingHat.org - Todos los derechos reservados</p>
         </div>

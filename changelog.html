@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog - TheHackingHat.org</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(-45deg, #00ff00, #00ffff, #00ff00, #00ffff);
+            background-size: 300% 300%;
+            animation: gradient 5s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            letter-spacing: -0.05em;
+        }
+        .custom-bg {
+            background-image: radial-gradient(circle at 50% 50%, rgba(0, 255, 0, 0.1) 0%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 0, 0, 0) 50%);
+        }
+        .update-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 255, 0, 0.1);
+        }
+        .update-card:hover {
+            border-color: rgba(0, 255, 0, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0, 255, 0, 0.2);
+            transform: translateY(-5px) scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <div id="nav-placeholder"></div>
+    <script>
+        fetch('/components/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenuButton && mobileMenu) {
+                    mobileMenuButton.addEventListener('click', () => {
+                        mobileMenu.classList.toggle('hidden');
+                    });
+                }
+            });
+    </script>
+
+    <main class="flex-grow container mx-auto px-4 py-16">
+        <div class="relative mb-16">
+            <div class="absolute inset-0 bg-gradient-to-b from-gray-800/30 to-transparent blur-xl"></div>
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 text-center tracking-tight leading-none relative">
+                <span class="gradient-text">Changelog</span>
+            </h1>
+            <p class="text-xl text-gray-300 text-center max-w-2xl mx-auto relative">
+                Seguimiento de actualizaciones y mejoras en TheHackingHat.org
+            </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto space-y-8">
+            <!-- Beta R2 Update -->
+            <div class="update-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-6">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <h2 class="text-2xl font-bold gradient-text">Beta R2</h2>
+                        <p class="text-gray-400 text-sm mt-1">Febrero 2025</p>
+                    </div>
+                    <span class="px-3 py-1 bg-green-400/10 text-green-400 rounded-full text-sm font-mono">Latest</span>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-gray-300">
+                        <h3 class="text-white font-semibold mb-2">Búsqueda por Etiquetas</h3>
+                        <p>Implementación del sistema de búsqueda por etiquetas en el buscador de artículos:</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1 text-gray-400">
+                            <li>Uso del símbolo @ para filtrar por categoría</li>
+                            <li>Visualización dinámica de etiquetas activas</li>
+                            <li>Filtrado en tiempo real de artículos por categoría</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beta R1 Update -->
+            <div class="update-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-6">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <h2 class="text-2xl font-bold gradient-text">Beta R1</h2>
+                        <p class="text-gray-400 text-sm mt-1">Febrero 2025</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-gray-300">
+                        <h3 class="text-white font-semibold mb-2">Buscador de Artículos</h3>
+                        <p>Implementación del sistema de búsqueda en la sección de artículos:</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1 text-gray-400">
+                            <li>Búsqueda en tiempo real de artículos</li>
+                            <li>Interfaz intuitiva y responsive</li>
+                            <li>Optimización del rendimiento de búsqueda</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800/50 backdrop-blur-sm py-8 mt-12">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2025 TheHackingHat.org - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>

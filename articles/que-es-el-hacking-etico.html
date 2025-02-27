@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué es el Hacking Ético? - TheHackingHat.org</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(-45deg, #00ff00, #00ffff, #00ff00, #00ffff);
+            background-size: 300% 300%;
+            animation: gradient 5s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            letter-spacing: -0.05em;
+        }
+        .custom-bg {
+            background-image: radial-gradient(circle at 50% 50%, rgba(0, 255, 0, 0.1) 0%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 0, 0, 0) 50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <div id="nav-placeholder"></div>
+    <script>
+        fetch('/components/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <article class="max-w-4xl mx-auto">
+            <header class="mb-12 text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                    <span class="gradient-text">¿Qué es el Hacking Ético?</span>
+                </h1>
+                <p class="text-xl text-gray-400">Una guía completa sobre la práctica profesional de la seguridad informática</p>
+            </header>
+
+            <div class="prose prose-lg prose-invert max-w-none">
+                <section class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">Introducción al Hacking Ético</h2>
+                    <p class="mb-4 text-gray-300">El hacking ético, también conocido como pruebas de penetración o pentesting, es una práctica profesional y legítima dentro del campo de la ciberseguridad. Se trata de un proceso autorizado de identificación y explotación de vulnerabilidades en sistemas informáticos con el objetivo de mejorar su seguridad.</p>
+                    <p class="mb-4 text-gray-300">A diferencia del hacking malicioso, los hackers éticos trabajan con el permiso explícito de las organizaciones para encontrar y corregir fallos de seguridad antes de que puedan ser explotados por actores malintencionados.</p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">Roles y Responsabilidades</h2>
+                    <p class="mb-4 text-gray-300">Un hacker ético tiene diversas responsabilidades y debe mantener altos estándares profesionales:</p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-300">
+                        <li class="mb-2">Obtener autorización explícita antes de realizar pruebas</li>
+                        <li class="mb-2">Documentar meticulosamente todas las actividades y hallazgos</li>
+                        <li class="mb-2">Mantener la confidencialidad de la información sensible</li>
+                        <li class="mb-2">Proporcionar recomendaciones detalladas para la remediación</li>
+                        <li class="mb-2">Seguir metodologías y estándares establecidos</li>
+                    </ul>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">Metodologías y Fases</h2>
+                    <p class="mb-4 text-gray-300">El proceso de hacking ético generalmente sigue estas fases principales:</p>
+                    
+                    <h3 class="text-2xl font-bold mb-4 text-green-400">1. Reconocimiento</h3>
+                    <p class="mb-6 text-gray-300">Recopilación de información sobre el objetivo utilizando fuentes públicas y técnicas de OSINT (Open Source Intelligence). Esta fase es crucial para entender el alcance y la superficie de ataque del objetivo.</p>
+                    
+                    <h3 class="text-2xl font-bold mb-4 text-green-400">2. Escaneo</h3>
+                    <p class="mb-6 text-gray-300">Identificación activa de vulnerabilidades potenciales mediante herramientas especializadas. Incluye escaneo de puertos, análisis de servicios y mapeo de la red.</p>
+                    
+                    <h3 class="text-2xl font-bold mb-4 text-green-400">3. Obtención de Acceso</h3>
+                    <p class="mb-6 text-gray-300">Explotación controlada de las vulnerabilidades encontradas para demostrar los riesgos potenciales. Siempre se realiza de manera que no cause daños al sistema.</p>
+                    
+                    <h3 class="text-2xl font-bold mb-4 text-green-400">4. Mantenimiento de Acceso</h3>
+                    <p class="mb-6 text-gray-300">Simulación de cómo un atacante podría mantener su presencia en el sistema, útil para identificar fallos en la detección y monitorización.</p>
+                    
+                    <h3 class="text-2xl font-bold mb-4 text-green-400">5. Análisis y Reporte</h3>
+                    <p class="mb-6 text-gray-300">Documentación detallada de los hallazgos, incluyendo la severidad de las vulnerabilidades y recomendaciones específicas para su mitigación.</p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">Herramientas y Tecnologías</h2>
+                    <p class="mb-4 text-gray-300">Los hackers éticos utilizan una amplia gama de herramientas especializadas:</p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-300">
+                        <li class="mb-2">Escáneres de vulnerabilidades (Nmap, Nessus)</li>
+                        <li class="mb-2">Frameworks de pentesting (Metasploit, Burp Suite)</li>
+                        <li class="mb-2">Herramientas de análisis de red (Wireshark)</li>
+                        <li class="mb-2">Sistemas operativos especializados (Kali Linux, Parrot OS)</li>
+                        <li class="mb-2">Herramientas de análisis de código (SonarQube)</li>
+                    </ul>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">Certificaciones y Desarrollo Profesional</h2>
+                    <p class="mb-4 text-gray-300">Para establecerse como profesional en hacking ético, existen varias certificaciones reconocidas:</p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-300">
+                        <li class="mb-2">Certified Ethical Hacker (CEH)</li>
+                        <li class="mb-2">OSCP (Offensive Security Certified Professional)</li>
+                        <li class="mb-2">CompTIA PenTest+</li>
+                        <li class="mb-2">GIAC Penetration Tester (GPEN)</li>
+                    </ul>
+                    <p class="mb-4 text-gray-300">Además de las certificaciones, es crucial mantener un aprendizaje continuo debido a la naturaleza evolutiva de la seguridad informática.</p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">Aspectos Legales y Éticos</h2>
+                    <p class="mb-4 text-gray-300">El hacking ético debe realizarse dentro de un marco legal y ético claro:</p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-300">
+                        <li class="mb-2">Obtener autorización por escrito antes de cualquier prueba</li>
+                        <li class="mb-2">Respetar los límites establecidos en el alcance del proyecto</li>
+                        <li class="mb-2">Proteger la confidencialidad de los datos del cliente</li>
+                        <li class="mb-2">Seguir las regulaciones locales y globales de ciberseguridad</li>
+                        <li class="mb-2">Reportar inmediatamente cualquier hallazgo crítico</li>
+                    </ul>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">Conclusión</h2>
+                    <p class="mb-4 text-gray-300">El hacking ético es una disciplina fundamental en la ciberseguridad moderna. Los profesionales en este campo juegan un papel crucial en la protección de sistemas y datos críticos. Con el aumento de las amenazas cibernéticas, la demanda de hackers éticos cualificados continúa creciendo, ofreciendo excelentes oportunidades profesionales para aquellos comprometidos con la seguridad informática.</p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-gray-800/50 backdrop-blur-sm py-8">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2025 TheHackingHat.org - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
