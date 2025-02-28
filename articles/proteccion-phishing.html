@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protección contra Phishing - TheHackingHat.org</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(-45deg, #00ff00, #00ffff, #00ff00, #00ffff);
+            background-size: 300% 300%;
+            animation: gradient 5s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            letter-spacing: -0.05em;
+        }
+        .custom-bg {
+            background-image: radial-gradient(circle at 50% 50%, rgba(0, 255, 0, 0.1) 0%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 0, 0, 0) 50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="bg-gray-800/50 backdrop-blur-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center space-x-6">
+                <a href="../index.html" class="gradient-text text-xl font-bold hover:opacity-80 transition-opacity">TheHackingHat.org</a>
+                <a href="../articles.html" class="text-gray-300 hover:text-green-400 transition-colors duration-300">Artículos</a>
+                <a href="../team.html" class="text-gray-300 hover:text-green-400 transition-colors duration-300">Equipo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <!-- Article Header -->
+            <div class="mb-12">
+                <span class="inline-block px-3 py-1 text-xs font-medium bg-green-400/10 text-green-400 rounded-full mb-4">Seguridad</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Protección contra Phishing</h1>
+                <p class="text-xl text-gray-300">Descubre cómo identificar y evitar ataques de phishing que buscan robar tu información personal y credenciales.</p>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose prose-lg prose-invert max-w-none">
+                <h2 class="text-2xl font-bold text-green-400 mb-4">¿Qué es el phishing?</h2>
+                <p class="mb-6">El phishing es una técnica de ingeniería social utilizada por ciberdelincuentes para engañar a los usuarios y obtener información confidencial como credenciales de acceso, datos bancarios o información personal. Estos ataques suelen llegar en forma de correos electrónicos, mensajes de texto o sitios web fraudulentos que imitan a entidades legítimas.</p>
+                
+                <h2 class="text-2xl font-bold text-green-400 mb-4">Tipos comunes de ataques de phishing</h2>
+                <ul class="list-disc pl-6 mb-6 space-y-2">
+                    <li><strong>Phishing por correo electrónico:</strong> Mensajes que suplantan a empresas legítimas solicitando información personal o dirigiéndote a sitios web falsos.</li>
+                    <li><strong>Spear phishing:</strong> Ataques dirigidos específicamente a ti, utilizando información personal para parecer más creíbles.</li>
+                    <li><strong>Smishing:</strong> Phishing a través de mensajes SMS o aplicaciones de mensajería.</li>
+                    <li><strong>Vishing:</strong> Phishing por vía telefónica, donde el atacante se hace pasar por una entidad de confianza.</li>
+                    <li><strong>Pharming:</strong> Redirige el tráfico de un sitio web legítimo a uno falso sin tu conocimiento.</li>
+                </ul>
+
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-green-400/20 my-8">
+                    <h3 class="text-xl font-bold text-green-400 mb-4">Señales de alerta de phishing</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-white mb-2">En correos electrónicos:</h4>
+                            <ul class="list-disc pl-6 text-sm space-y-1">
+                                <li>Remitentes desconocidos o sospechosos</li>
+                                <li>Errores gramaticales y ortográficos</li>
+                                <li>Solicitudes urgentes o amenazantes</li>
+                                <li>Enlaces sospechosos o acortados</li>
+                                <li>Archivos adjuntos inesperados</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-2">En sitios web:</h4>
+                            <ul class="list-disc pl-6 text-sm space-y-1">
+                                <li>URL incorrecta o ligeramente modificada</li>
+                                <li>Ausencia del candado de seguridad (HTTPS)</li>
+                                <li>Diseño poco profesional o desactualizado</li>
+                                <li>Formularios que solicitan demasiada información</li>
+                                <li>Certificados de seguridad inválidos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-bold text-green-400 mb-4">Cómo protegerte del phishing</h2>
+                <ol class="list-decimal pl-6 mb-6 space-y-2">
+                    <li><strong>Verifica siempre el remitente:</strong> Comprueba la dirección de correo electrónico completa, no solo el nombre mostrado.</li>
+                    <li><strong>No hagas clic en enlaces sospechosos:</strong> Pasa el cursor sobre los enlaces para ver la URL real antes de hacer clic.</li>
+                    <li><strong>Accede directamente a los sitios web:</strong> En lugar de seguir enlaces, escribe manualmente la URL o usa marcadores guardados.</li>
+                    <li><strong>Mantén actualizado tu software:</strong> Actualiza regularmente tu sistema operativo, navegador y antivirus.</li>
+                    <li><strong>Utiliza autenticación de dos factores:</strong> Añade una capa extra de seguridad a tus cuentas importantes.</li>
+                    <li><strong>Desconfía de las ofertas demasiado buenas:</strong> Si algo parece demasiado bueno para ser verdad, probablemente sea falso.</li>
+                    <li><strong>Revisa regularmente tus cuentas:</strong> Monitoriza tus cuentas bancarias y servicios online para detectar actividades sospechosas.</li>
+                </ol>
+
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-green-400/20 my-8">
+                    <h3 class="text-xl font-bold text-green-400 mb-4">Ejemplo de correo de phishing</h3>
+                    <div class="p-4 bg-gray-700/50 rounded-lg border border-gray-600 font-mono text-sm">
+                        <p class="mb-2"><strong>De:</strong> servicio-cliente@banc0-segur0.com</p>
+                        <p class="mb-2"><strong>Asunto:</strong> ¡URGENTE! Su cuenta ha sido comprometida</p>
+                        <p class="mb-4">Estimado cliente,</p>
+                        <p class="mb-2">Hemos detectado actividad sospechosa en su cuenta. Para evitar el bloqueo inmediato, debe verificar su identidad haciendo clic en el siguiente enlace:</p>
+                        <p class="mb-4 text-blue-400 underline">[ENLACE SOSPECHOSO]</p>
+                        <p class="mb-2">Si no verifica su cuenta en las próximas 24 horas, será bloqueada permanentemente.</p>
+                        <p class="mb-4">Atentamente,<br>Departamento de Seguridad</p>
+                        <div class="border-t border-gray-600 pt-2 mt-2">
+                            <p class="text-xs text-red-400">Señales de alerta: remitente sospechoso, sentido de urgencia, amenazas, errores gramaticales, solicitud de clic en un enlace.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-bold text-green-400 mb-4">Qué hacer si has sido víctima de phishing</h2>
+                <ol class="list-decimal pl-6 mb-6 space-y-2">
+                    <li>Cambia inmediatamente las contraseñas de las cuentas afectadas.</li>
+                    <li>Contacta con tu banco o proveedor de servicios para informar del incidente.</li>
+                    <li>Monitoriza tus cuentas bancarias y reporta cualquier transacción sospechosa.</li>
+                    <li>Considera la posibilidad de congelar tu crédito si has compartido información financiera.</li>
+                    <li>Reporta el ataque a las autoridades competentes y plataformas anti-phishing.</li>
+                </ol>
+
+                <h2 class="text-2xl font-bold text-green-400 mb-4">Herramientas y recursos útiles</h2>
+                <ul class="list-disc pl-6 mb-6 space-y-2">
+                    <li>Extensiones de navegador que bloquean sitios de phishing conocidos.</li>
+                    <li>Servicios de filtrado de correo electrónico con protección anti-phishing.</li>
+                    <li>Plataformas para reportar intentos de phishing: <a href="https://www.incibe.es" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">INCIBE</a> (España) o <a href="https://www.phishing.org" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Phishing.org</a>.</li>
+                    <li>Programas de formación en ciberseguridad para reconocer y evitar amenazas.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-green-400 mb-4">Conclusión</h2>
+                <p class="mb-6">El phishing sigue siendo una de las amenazas más comunes y efectivas en el mundo digital. La mejor defensa es la educación y la cautela. Mantente alerta, cuestiona las comunicaciones sospechosas y nunca proporciones información sensible a menos que estés completamente seguro de la legitimidad del destinatario. Recuerda que la prevención es siempre mejor que tener que lidiar con las consecuencias de un ataque exitoso.</p>
+            </div>
+
+            <!-- Article Footer -->
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                <p class="text-gray-400">Última actualización: Febrero 2025</p>
+                <div class="mt-6">
+                    <a href="../articles.html" class="inline-flex items-center space-x-2 text-green-400 hover:text-green-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                        <span>Volver a artículos</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800/50 backdrop-blur-sm py-8 mt-12">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2025 TheHackingHat.org - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>

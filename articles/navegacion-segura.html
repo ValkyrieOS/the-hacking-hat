@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegación Segura - TheHackingHat.org</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(-45deg, #00ff00, #00ffff, #00ff00, #00ffff);
+            background-size: 300% 300%;
+            animation: gradient 5s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            letter-spacing: -0.05em;
+        }
+        .custom-bg {
+            background-image: radial-gradient(circle at 50% 50%, rgba(0, 255, 0, 0.1) 0%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 0, 0, 0) 50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="bg-gray-800/50 backdrop-blur-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center space-x-6">
+                <a href="../index.html" class="gradient-text text-xl font-bold hover:opacity-80 transition-opacity">TheHackingHat.org</a>
+                <a href="../articles.html" class="text-gray-300 hover:text-green-400 transition-colors duration-300">Artículos</a>
+                <a href="../team.html" class="text-gray-300 hover:text-green-400 transition-colors duration-300">Equipo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <!-- Article Header -->
+            <div class="mb-12">
+                <span class="inline-block px-3 py-1 text-xs font-medium bg-green-400/10 text-green-400 rounded-full mb-4">Seguridad</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Navegación Segura</h1>
+                <p class="text-xl text-gray-300">Consejos y herramientas para navegar de forma segura en internet y proteger tu privacidad en línea.</p>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose prose-lg prose-invert max-w-none">
+                <h2 class="text-2xl font-bold text-green-400 mb-4">¿Por qué es importante la navegación segura?</h2>
+                <p class="mb-6">Cada vez que navegas por internet, dejas un rastro digital que puede ser rastreado, recopilado y analizado. Sin las precauciones adecuadas, tu información personal, hábitos de navegación e incluso tus credenciales pueden quedar expuestos a terceros, desde empresas de publicidad hasta ciberdelincuentes. La navegación segura no solo protege tu privacidad, sino que también reduce significativamente el riesgo de ser víctima de malware, phishing y otras amenazas en línea.</p>
+                
+                <h2 class="text-2xl font-bold text-green-400 mb-4">Navegadores seguros y configuraciones</h2>
+                <p class="mb-4">La elección del navegador y su configuración adecuada son fundamentales para una navegación segura:</p>
+                <ul class="list-disc pl-6 mb-6 space-y-2">
+                    <li><strong>Navegadores recomendados:</strong> Firefox, Brave o Tor Browser ofrecen buenas características de privacidad.</li>
+                    <li><strong>Actualizaciones:</strong> Mantén siempre tu navegador actualizado a la última versión.</li>
+                    <li><strong>Configuración de privacidad:</strong> Ajusta la configuración para bloquear cookies de terceros, desactivar el autocompletado de formularios para información sensible y activar la protección contra rastreo.</li>
+                    <li><strong>Modo incógnito/privado:</strong> Útil para sesiones temporales, pero recuerda que no te hace anónimo en internet.</li>
+                    <li><strong>Gestión de cookies:</strong> Limpia regularmente las cookies y datos de navegación.</li>
+                </ul>
+
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-green-400/20 my-8">
+                    <h3 class="text-xl font-bold text-green-400 mb-4">Extensiones esenciales para navegación segura</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-white mb-2">Bloqueadores de anuncios y rastreadores:</h4>
+                            <ul class="list-disc pl-6 text-sm space-y-1">
+                                <li>uBlock Origin</li>
+                                <li>Privacy Badger</li>
+                                <li>AdGuard</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-2">Seguridad adicional:</h4>
+                            <ul class="list-disc pl-6 text-sm space-y-1">
+                                <li>HTTPS Everywhere</li>
+                                <li>NoScript</li>
+                                <li>Decentraleyes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-bold text-green-400 mb-4">VPNs y su importancia</h2>
+                <p class="mb-6">Una Red Privada Virtual (VPN) cifra tu conexión a internet y oculta tu dirección IP real, proporcionando una capa adicional de privacidad y seguridad, especialmente cuando utilizas redes Wi-Fi públicas. Al elegir un servicio VPN, considera factores como la política de no registros, la ubicación de la empresa, la velocidad de conexión y las características de seguridad adicionales.</p>
+
+                <h2 class="text-2xl font-bold text-green-400 mb-4">HTTPS y certificados de seguridad</h2>
+                <p class="mb-6">Siempre verifica que los sitios web que visitas utilicen HTTPS (indicado por un candado en la barra de direcciones). HTTPS garantiza que la comunicación entre tu navegador y el sitio web esté cifrada. Desconfía de los sitios que solo utilizan HTTP, especialmente si solicitan información personal o credenciales.</p>
+
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-green-400/20 my-8">
+                    <h3 class="text-xl font-bold text-green-400 mb-4">Prácticas recomendadas para navegación segura</h3>
+                    <ol class="list-decimal pl-6 space-y-2">
+                        <li>No accedas a información sensible (como cuentas bancarias) desde redes Wi-Fi públicas sin usar una VPN.</li>
+                        <li>Verifica siempre la URL antes de introducir credenciales o información personal.</li>
+                        <li>Utiliza un gestor de contraseñas para generar y almacenar contraseñas únicas y seguras.</li>
+                        <li>Activa la autenticación de dos factores en todos los servicios que lo permitan.</li>
+                        <li>Descarga software solo de fuentes oficiales y verificadas.</li>
+                        <li>Mantén actualizado tu sistema operativo y todas las aplicaciones.</li>
+                        <li>Realiza escaneos periódicos con software antimalware.</li>
+                    </ol>
+                </div>
+
+                <h2 class="text-2xl font-bold text-green-400 mb-4">Motores de búsqueda privados</h2>
+                <p class="mb-6">Considera utilizar motores de búsqueda que respeten tu privacidad y no rastreen tus búsquedas, como DuckDuckGo, Startpage o Qwant. Estos motores no crean perfiles de usuario basados en tu historial de búsqueda ni comparten tus datos con terceros.</p>
+
+                <h2 class="text-2xl font-bold text-green-400 mb-4">Redes sociales y privacidad</h2>
+                <p class="mb-6">Las redes sociales son grandes recopiladores de datos personales. Revisa y ajusta la configuración de privacidad de tus cuentas regularmente, limita la información personal que compartes y considera utilizar navegadores o perfiles separados para estas plataformas.</p>
+
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-green-400/20 my-8">
+                    <h3 class="text-xl font-bold text-green-400 mb-4">Señales de advertencia durante la navegación</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Certificados SSL inválidos o caducados</li>
+                        <li>Redirecciones inesperadas a otros sitios web</li>
+                        <li>Ventanas emergentes excesivas o agresivas</li>
+                        <li>Solicitudes para instalar software o extensiones no solicitadas</li>
+                        <li>Mensajes de error inusuales o alertas de seguridad sospechosas</li>
+                        <li>URLs con errores tipográficos o dominios extraños</li>
+                    </ul>
+                </div>
+
+                <h2 class="text-2xl font-bold text-green-400 mb-4">Conclusión</h2>
+                <p class="mb-6">La navegación segura requiere una combinación de herramientas adecuadas, configuraciones correctas y, sobre todo, buenos hábitos digitales. Invierte tiempo en implementar estas medidas de seguridad y mantente informado sobre las nuevas amenazas y soluciones. Recuerda que la seguridad en línea es un proceso continuo, no un estado permanente.</p>
+            </div>
+
+            <!-- Article Footer -->
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                <p class="text-gray-400">Última actualización: Febrero 2025</p>
+                <div class="mt-6">
+                    <a href="../articles.html" class="inline-flex items-center space-x-2 text-green-400 hover:text-green-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                        <span>Volver a artículos</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800/50 backdrop-blur-sm py-8 mt-12">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2025 TheHackingHat.org - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>

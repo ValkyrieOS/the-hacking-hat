@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contraseñas Seguras - TheHackingHat.org</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(-45deg, #00ff00, #00ffff, #00ff00, #00ffff);
+            background-size: 300% 300%;
+            animation: gradient 5s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            letter-spacing: -0.05em;
+        }
+        .custom-bg {
+            background-image: radial-gradient(circle at 50% 50%, rgba(0, 255, 0, 0.1) 0%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 0, 0, 0) 50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="bg-gray-800/50 backdrop-blur-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center space-x-6">
+                <a href="../index.html" class="gradient-text text-xl font-bold hover:opacity-80 transition-opacity">TheHackingHat.org</a>
+                <a href="../articles.html" class="text-gray-300 hover:text-green-400 transition-colors duration-300">Artículos</a>
+                <a href="../team.html" class="text-gray-300 hover:text-green-400 transition-colors duration-300">Equipo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <!-- Article Header -->
+            <div class="mb-12">
+                <span class="inline-block px-3 py-1 text-xs font-medium bg-green-400/10 text-green-400 rounded-full mb-4">Seguridad</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Contraseñas Seguras</h1>
+                <p class="text-xl text-gray-300">Aprende a crear y gestionar contraseñas seguras para proteger tus cuentas contra accesos no autorizados.</p>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose prose-lg prose-invert max-w-none">
+                <h2 class="text-2xl font-bold text-green-400 mb-4">¿Por qué son importantes las contraseñas seguras?</h2>
+                <p class="mb-6">En la era digital actual, nuestras contraseñas son la primera línea de defensa contra accesos no autorizados a nuestras cuentas y datos personales. Una contraseña débil puede ser descifrada en cuestión de segundos o minutos por herramientas automatizadas, poniendo en riesgo tu privacidad y seguridad.</p>
+                
+                <h2 class="text-2xl font-bold text-green-400 mb-4">Características de una contraseña segura</h2>
+                <ul class="list-disc pl-6 mb-6 space-y-2">
+                    <li><strong>Longitud:</strong> Mínimo 12 caracteres. Cuanto más larga, más segura.</li>
+                    <li><strong>Complejidad:</strong> Combinación de letras mayúsculas y minúsculas, números y símbolos especiales.</li>
+                    <li><strong>Unicidad:</strong> Diferente para cada servicio o cuenta.</li>
+                    <li><strong>No predecible:</strong> Evita información personal fácilmente asociable contigo (fechas de nacimiento, nombres de mascotas, etc.).</li>
+                    <li><strong>Sin patrones obvios:</strong> Evita secuencias como "123456" o "qwerty".</li>
+                </ul>
+
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-green-400/20 my-8">
+                    <h3 class="text-xl font-bold text-green-400 mb-4">Ejemplo de contraseña débil vs. fuerte</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-4 bg-red-900/20 rounded-lg border border-red-500/30">
+                            <p class="font-bold text-red-400 mb-2">Débil: password123</p>
+                            <ul class="list-disc pl-6 text-sm">
+                                <li>Palabra común del diccionario</li>
+                                <li>Patrón numérico predecible</li>
+                                <li>Demasiado corta</li>
+                                <li>Sin caracteres especiales</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-green-900/20 rounded-lg border border-green-500/30">
+                            <p class="font-bold text-green-400 mb-2">Fuerte: P@$$w0rd-C0mpl3x!24</p>
+                            <ul class="list-disc pl-6 text-sm">
+                                <li>Larga (18 caracteres)</li>
+                                <li>Mezcla de mayúsculas y minúsculas</li>
+                                <li>Incluye números y símbolos</li>
+                                <li>Sustituciones no obvias</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-bold text-green-400 mb-4">Gestores de contraseñas</h2>
+                <p class="mb-4">Los gestores de contraseñas son herramientas que te permiten generar, almacenar y gestionar contraseñas seguras para todos tus servicios. Solo necesitas recordar una contraseña maestra para acceder a todas las demás.</p>
+                <p class="mb-6">Algunas opciones populares incluyen:</p>
+                <ul class="list-disc pl-6 mb-6 space-y-2">
+                    <li><strong>Bitwarden:</strong> Código abierto y gratuito con opciones premium.</li>
+                    <li><strong>KeePass:</strong> Solución local de código abierto.</li>
+                    <li><strong>LastPass:</strong> Servicio en la nube con funciones gratuitas y premium.</li>
+                    <li><strong>1Password:</strong> Enfocado en la facilidad de uso y seguridad.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-green-400 mb-4">Autenticación de dos factores (2FA)</h2>
+                <p class="mb-6">Además de usar contraseñas seguras, activa la autenticación de dos factores siempre que sea posible. Esto añade una capa adicional de seguridad al requerir un segundo método de verificación además de tu contraseña, como un código enviado a tu teléfono o generado por una aplicación.</p>
+
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-green-400/20 my-8">
+                    <h3 class="text-xl font-bold text-green-400 mb-4">Consejos adicionales</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Cambia tus contraseñas periódicamente, especialmente para servicios críticos.</li>
+                        <li>No compartas tus contraseñas con nadie, ni siquiera con personas de confianza.</li>
+                        <li>Evita guardar contraseñas en notas o archivos sin cifrar en tu dispositivo.</li>
+                        <li>Verifica si tus cuentas han sido comprometidas en sitios como <a href="https://haveibeenpwned.com" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Have I Been Pwned</a>.</li>
+                        <li>Considera usar frases de contraseña largas que sean fáciles de recordar pero difíciles de adivinar.</li>
+                    </ul>
+                </div>
+
+                <h2 class="text-2xl font-bold text-green-400 mb-4">Conclusión</h2>
+                <p class="mb-6">La seguridad de tus cuentas digitales comienza con contraseñas fuertes y bien gestionadas. Invierte tiempo en crear un sistema seguro para tus contraseñas y mantente alerta ante posibles amenazas. Recuerda que la seguridad no es un producto, sino un proceso continuo.</p>
+            </div>
+
+            <!-- Article Footer -->
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                <p class="text-gray-400">Última actualización: Febrero 2025</p>
+                <div class="mt-6">
+                    <a href="../articles.html" class="inline-flex items-center space-x-2 text-green-400 hover:text-green-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                        <span>Volver a artículos</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800/50 backdrop-blur-sm py-8 mt-12">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2025 TheHackingHat.org - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
